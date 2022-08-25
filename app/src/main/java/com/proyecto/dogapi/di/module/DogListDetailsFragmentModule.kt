@@ -10,15 +10,12 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 
 @Module
-
 abstract class DogListDetailsFragmentModule {
     @Binds
     @IntoMap
     @ViewModelKey(DogListDetailsViewModel::class)
-
-    abstract fun bindCompaniesViewModel(viewModel: DogListDetailsViewModel): ViewModel
+     abstract fun bindCompaniesViewModel(viewModel: DogListDetailsViewModel): ViewModel
 
     @Binds
-
-    abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
+     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
 }
