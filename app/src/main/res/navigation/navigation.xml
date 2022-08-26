@@ -39,7 +39,7 @@
         android:label="DogListNewDetailsFragment"
         tools:layout="@layout/fragment_dog_list_new_details">
         <action
-            android:id="@+id/action_dogListNewDetailsFragment_to_dogListFragments"
-            app:destination="@+id/dogListFragment"/>
+            android:id="@+id/action_dogListNewDetailsFragment_to_dogListDetailsFragments"
+            app:destination="@+id/dogListDetailsFragment"/>
     </fragment>
 </navigation>

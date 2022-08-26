@@ -60,9 +60,9 @@
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/rc_images"
+            android:id="@+id/rc_new_images"
             android:layout_below="@id/txt_test_dogs"
-            tools:listitem="@layout/item_dog_list_details"
+            tools:listitem="@layout/item_new_dog_list_details"
             />
     </RelativeLayout>
     <RelativeLayout

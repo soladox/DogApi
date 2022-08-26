@@ -11,9 +11,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.proyecto.dogapi.R
-import com.proyecto.dogapi.di.component.DaggerDogListDetailsFragmentComponent
-import com.proyecto.dogapi.presentation.adapter.DogListDetailsAdapter
-import com.proyecto.dogapi.presentation.viewModel.DogListDetailsViewModel
+import com.proyecto.dogapi.di.component.DaggerDogListNewDetailsFragmentComponent
+import com.proyecto.dogapi.presentation.adapter.DogListNewDetailsAdapter
+import com.proyecto.dogapi.presentation.viewModel.DogListNewDetailsViewModel
 import com.proyecto.dogapi.utils.Failure
 import com.proyecto.dogapi.utils.ResourceState
 import com.proyecto.dogapi.utils.ViewModelFactory
@@ -21,19 +21,20 @@ import com.proyecto.dogapi.utils.extension.requireNavController
 import com.proyecto.dogapi.utils.extension.showMessage
 import com.proyecto.dogapi.utils.extension.showProgress
 import com.proyecto.dogapi.utils.getViewModel
-import kotlinx.android.synthetic.main.fragment_dog_list_details.*
+import kotlinx.android.synthetic.main.fragment_dog_list_new_details.*
 import javax.inject.Inject
 
 class DogListNewDetailsFragment : Fragment(){
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
-    lateinit var viewModel: DogListDetailsViewModel
-    lateinit var adapter: DogListDetailsAdapter
+    lateinit var viewModel: DogListNewDetailsViewModel
+    lateinit var adapter: DogListNewDetailsAdapter
+    var race_name: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //injectDependence()
-//        initViewModel()
+        injectDependence()
+        initViewModel()
     }
 
     override fun onCreateView(
@@ -46,14 +47,14 @@ class DogListNewDetailsFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
 
-        val race_name = arguments?.getString("race")
+        race_name = arguments?.getString("race")
         race_name?.let{
             viewModel.getImageRace(it)
         }
 
         iv_back.setOnClickListener { goBack() }
 
-        rc_images.addOnScrollListener(object : RecyclerView.OnScrollListener(){
+        rc_new_images.addOnScrollListener(object : RecyclerView.OnScrollListener(){
             override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 if(!recyclerView.canScrollVertically(1) && newState == RecyclerView.SCROLL_STATE_IDLE){
@@ -63,9 +64,9 @@ class DogListNewDetailsFragment : Fragment(){
         })
     }
 
-   /* private fun injectDependence(){
-        DaggerDogListDetailsFragmentComponent.builder().build().inject(this)
-    } */
+    private fun injectDependence(){
+        DaggerDogListNewDetailsFragmentComponent.builder().build().inject(this)
+    }
 
     private fun handleDetailsDog(status: ResourceState, data: List<String>?, failure: Failure?){
         when(status){
@@ -94,10 +95,10 @@ class DogListNewDetailsFragment : Fragment(){
     }
 
     private fun initAdapter(){
-        adapter = DogListDetailsAdapter {}
-        rc_images.layoutManager = LinearLayoutManager(activity)
-        rc_images.layoutManager = GridLayoutManager(context,1)
-        rc_images.adapter = adapter
+        adapter = DogListNewDetailsAdapter {}
+        rc_new_images.layoutManager = LinearLayoutManager(activity)
+        rc_new_images.layoutManager = GridLayoutManager(context,1)
+        rc_new_images.adapter = adapter
     }
 
     fun addImageList(images: List<String>){
@@ -105,9 +106,11 @@ class DogListNewDetailsFragment : Fragment(){
     }
 
     fun goBack(){
+        val b = Bundle()
+        b.putString("race", race_name)
         requireNavController().navigate(
-            R.id.action_dogListNewDetailsFragment_to_dogListFragments,null, NavOptions.Builder()
-            .setPopUpTo(R.id.dogListFragment,true)
+            R.id.action_dogListNewDetailsFragment_to_dogListDetailsFragments,b, NavOptions.Builder()
+            .setPopUpTo(R.id.dogListDetailsFragment,true)
             .build())
     }
 }

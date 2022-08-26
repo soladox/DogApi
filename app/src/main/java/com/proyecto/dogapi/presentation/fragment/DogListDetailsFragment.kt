@@ -31,6 +31,7 @@ class DogListDetailsFragment : Fragment() {
     lateinit var viewModelFactory: ViewModelFactory
     lateinit var viewModel: DogListDetailsViewModel
     lateinit var adapter: DogListDetailsAdapter
+    var race_name: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,7 +49,7 @@ class DogListDetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         initAdapter()
 
-        val race_name = arguments?.getString("race")
+        race_name = arguments?.getString("race")
         race_name?.let{
             viewModel.getImageRace(it)
         }
@@ -115,14 +116,13 @@ class DogListDetailsFragment : Fragment() {
             .build())
     }
 
-    fun goToSecondDetailedFragment(images: List<String>){
-         val images: ArrayList<ImageDog>
-         i
-
+    fun goToSecondDetailedFragment(){
         //crear clase en modelo y añadir lista de string de imagenes
+        //val b = Bundle()
+        //var imageArray = ArrayList(images)
+        //b.putStringArrayList("images",imageArray)
         val b = Bundle()
-        var imageArray = ArrayList(images)
-        b.putStringArrayList("images",imageArray)
+        b.putString("race", race_name)
         requireNavController().navigate(R.id.action_dogListDetailsFragment_to_dogListNewDetailsFragment, b, NavOptions.Builder()
             .setPopUpTo(R.id.dogListNewDetailsFragment,true)
             .build())

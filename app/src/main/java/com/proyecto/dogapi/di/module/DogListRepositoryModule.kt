@@ -4,6 +4,7 @@ import com.proyecto.dogapi.data.remote.RaceApi
 import com.proyecto.dogapi.data.repository.DogListRepository
 import com.proyecto.dogapi.data.repository.DogListRepositoryImp
 import com.proyecto.dogapi.data.repository.mapper.ImageDogEntityToDomainMapper
+import com.proyecto.dogapi.data.repository.mapper.NewImageDogEntityToDomainMapper
 import com.proyecto.dogapi.data.repository.mapper.RaceEntityToDomainMapper
 import com.proyecto.dogapi.utils.ApiServiceFactory
 import dagger.Module
@@ -15,9 +16,9 @@ class DogListRepositoryModule {
     @Provides
 
     fun provideRepository(
-        api: RaceApi, mapper: RaceEntityToDomainMapper, mapperImageDog:ImageDogEntityToDomainMapper):
+        api: RaceApi, mapper: RaceEntityToDomainMapper, mapperImageDog:ImageDogEntityToDomainMapper, mapperNewImageDog: NewImageDogEntityToDomainMapper):
             DogListRepository{
-        return DogListRepositoryImp(api, mapper, mapperImageDog)
+        return DogListRepositoryImp(api, mapper, mapperImageDog, mapperNewImageDog)
     }
 
     @Provides
