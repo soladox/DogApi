@@ -11,13 +11,18 @@ class DogListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         injectDependencies()
         setContentView(R.layout.breed_dog_activity)
-        val myNavHostFragment: NavHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val myNavHostFragment: NavHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val inflater = myNavHostFragment.navController.navInflater
         val graph = inflater.inflate(R.navigation.navigation)
         myNavHostFragment.navController.graph = graph
     }
 
-    protected fun injectDependencies(){
+    protected fun injectDependencies() {
         DaggerDogListActivityComponent.builder().build().inject(this)
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 }

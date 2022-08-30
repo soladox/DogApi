@@ -10,14 +10,17 @@
         android:layout_height="wrap_content"
         android:id="@+id/rl_item_breed"
         android:layout_marginTop="10dp"
-        android:padding="10dp">
+        android:padding="10dp"
+        >
+
         <TextView
+            android:id="@+id/tv_breed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/tv_breed"
-            tools:text="affenpinscher"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/akaya_telivigala"
             android:textSize="25sp"
-            android:layout_marginStart="10dp"/>
+            tools:text="affenpinscher" />
     </RelativeLayout>
     <View
         android:layout_width="match_parent"

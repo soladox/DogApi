@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.navigation.NavOptions
@@ -30,11 +31,13 @@ class DogListNewDetailsFragment : Fragment(){
     lateinit var viewModel: DogListNewDetailsViewModel
     lateinit var adapter: DogListNewDetailsAdapter
     var race_name: String? = null
+    lateinit var b: Bundle
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         injectDependence()
         initViewModel()
+        goBackNavBar()
     }
 
     override fun onCreateView(
@@ -106,11 +109,21 @@ class DogListNewDetailsFragment : Fragment(){
     }
 
     fun goBack(){
-        val b = Bundle()
+        b = Bundle()
         b.putString("race", race_name)
         requireNavController().navigate(
             R.id.action_dogListNewDetailsFragment_to_dogListDetailsFragments,b, NavOptions.Builder()
             .setPopUpTo(R.id.dogListDetailsFragment,true)
             .build())
+    }
+
+    fun goBackNavBar(){
+        requireActivity().onBackPressedDispatcher.addCallback(this) {
+            race_name = arguments?.getString("race")
+            race_name?.let{
+                viewModel.getImageRace(it)
+            }
+            goBack()
+        }
     }
 }
