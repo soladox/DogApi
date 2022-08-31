@@ -1,5 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">#02498E</color>
+    <color name="colorPrimaryDark">#00285C</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="colorTextBoton">#FFFFFF</color>
+    <color name="colorTextNegro">#000000</color>
+    <color name="colorTextFormat">#828282</color>
+    <color name="colorTextNegroTenue">#252525</color>
+    <color name="colorTextNegroHint">#A3A2A2</color>
+    <color name="colorLineaGris">#ECEBEB</color>
+    <color name="colorAlpha">#DEEAFA</color>
+
+    <color name="alvi_blue_opacity">#041629</color>
+    <color name="alvi_blue_opacity2">#010F1D</color>
+    <color name="alvi_blue">#02498E</color>
+    <color name="alvi_light_yellow">#FCE299</color>
+    <color name="smu_red">#da291c</color>
+    <color name="smu_red_error">#E43C3C</color>
+    <color name="smu_blue_bg">#e4f7fc</color>
+    <color name="smu_blue_dark">#00586c</color>
+    <color name="smu_red_bg">#fff4f4</color>
+    <color name="smu_red_bg2">#FED7D7</color>
+    <color name="smu_blue">#02498E</color>
+    <color name="smu_red_dark">#a21b11</color>
+    <color name="smu_gray_text">#282828</color>
+    <color name="smu_gray_light">#e5e5e5</color>
+    <color name="smu_gray_light2">#D5D4D4</color>
+    <color name="smu_gray_light3">#F5F6FA</color>
+    <color name="smu_gray_dark">#666666</color>
+    <color name="smu_white">#ffffff</color>
+    <color name="smu_white_bg">#F5F5F5</color>
+    <color name="smu_gray_inactive">#c4c4c4</color>
+    <color name="smu_gray_bg">#f5f5f5</color>
+    <color name="smu_black">#3A3A3A</color>
+    <color name="smu_black_neutral">#333333</color>
+    <color name="smu_green">#24BA00</color>
+    <color name="system_red_dark">#c60f08</color>
+    <color name="system_gray">#eaeaea</color>
+    <color name="smu_gray">#666666</color>
+    <color name="smu_red_text">#C00000</color>
+    <color name="smu_warning_dark">#CC870F</color>
+
+    <color name="colorPrimaryCategory">#f5f5f5</color>
+    <color name="colorPrimaryDarkCategory">#eaeaea</color>
+    <color name="colorStatusBarCategory">#A3A2A2</color>
+    <color name="colorBackground">#f5f5f5</color>
+
+    <color name="pay_with_invoice_arrow">#89000000</color>
+
+    <color name="colorTextCantidadUnidad">#666666</color>
+    <color name="colorBorderTag">#828282</color>
+    <color name="colorTextTag">#3a3a3a</color>
+
+    <color name="colorBackgroundPromotion">#F9F9F9</color>
+    <color name="colorBorderCampaign">#212322</color>
+    <color name="colorBorderPromotion">#C4C4C4</color>
+    <color name="colorBorderExclusive">#FEDD00</color>
+    <color name="colorBorderPersonalization">#00819F</color>
+    <color name="colorSwitchThumbNormal">#f1f1f1</color>
+    <color name="secondaryButtonStart">#FFE59C</color>
+    <color name="secondaryButtonEnd">#EEC656</color>
+
+    <color name="order_default">#CC870F</color>
+    <color name="order_delivered">#49A931</color>
+    <color name="order_canceled">#F80000</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_500_dark">#666666</color>
+    <color name="transparent">#00000000</color>
+
+    <color name="shabitBronze">#FFB28300</color>
+    <color name="shabitBronzeSecondary">#FF765700</color>
+    <color name="shabitSilver">#FF888888</color>
+    <color name="shabitSilverSecondary">#FF6D6D6D</color>
+    <color name="shabitGold">#FFE8A800</color>
+    <color name="shabitGoldSecondary">#FFCF9600</color>
+    <color name="shabitVip">#FF02498E</color>
+    <color name="shabitVipSecondary">#FF00285C</color>
+
+
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>

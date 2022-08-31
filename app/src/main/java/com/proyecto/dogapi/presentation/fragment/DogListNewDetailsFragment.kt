@@ -98,7 +98,9 @@ class DogListNewDetailsFragment : Fragment(){
     }
 
     private fun initAdapter(){
-        adapter = DogListNewDetailsAdapter {}
+        adapter = DogListNewDetailsAdapter {
+
+        }
         rc_new_images.layoutManager = LinearLayoutManager(activity)
         rc_new_images.layoutManager = GridLayoutManager(context,2)
         rc_new_images.adapter = adapter

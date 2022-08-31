@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="horizontal">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_product_shelf_mosaic_alpha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_border_color"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <ImageView
+            android:id="@+id/imgProduct"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="39dp"
+            android:contentDescription="Test"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/mermelada" />
+
+        <TextView
+            android:id="@+id/tvProductBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="29dp"
+            android:layout_marginEnd="8dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/open_sans"
+            android:lines="1"
+            android:singleLine="true"
+            android:text="Watt's"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorTextNegro"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@id/imgProduct"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTitleProduct"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:ellipsize="end"
+            android:fontFamily="@font/open_sans"
+            android:lines="2"
+            android:singleLine="true"
+            android:layout_marginEnd="20dp"
+            android:text="Mermelada Original de mmmmmmmmmmm"
+            android:textAlignment="textStart"
+            android:textColor="@color/colorTextNegro"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/fabTask"
+            app:layout_constraintStart_toEndOf="@id/imgProduct"
+            app:layout_constraintTop_toBottomOf="@id/tvProductBrand" />
+
+        <TextView
+            android:id="@+id/tvPPUnit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
+            android:maxLines="1"
+            android:text="250 gr - Empaque 10 Unidades"
+            android:textColor="@color/colorTextFormat"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@id/tvTitleProduct"
+            app:layout_constraintStart_toStartOf="@id/tvTitleProduct"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleProduct" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabFavorite"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:fabCustomSize="30dp"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_favorite"
+            android:backgroundTint="@color/white"
+            app:layout_constraintTop_toBottomOf="@id/fabTask"
+            app:borderWidth="0dp"/>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fabTask"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            app:fabCustomSize="30dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_task"
+            android:backgroundTint="@color/white"
+            app:borderWidth="0dp"/>
+
+        <LinearLayout
+            android:id="@+id/llPriceProductAlvi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@id/tvTitleProduct"
+            app:layout_constraintTop_toBottomOf="@+id/tvPPUnit">
+
+            <TextView
+                android:id="@+id/tvPriceProductAlvi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/open_sans_semibold"
+                android:text="Precio Socio"
+                android:textColor="@color/colorPrimary"
+                android:textSize="11dp" />
+
+            <ImageView
+                android:id="@+id/logoAlvi"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:contentDescription="logo alvi"
+                android:src="@drawable/logo_alvi" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llScalePrice"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="5dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/view1"
+            app:layout_constraintEnd_toEndOf="@+id/fabFavorite"
+            app:layout_constraintStart_toStartOf="@id/llPriceProductAlvi"
+            app:layout_constraintTop_toBottomOf="@id/llPriceProductAlvi">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="2dp">
+
+                <TextView
+                    android:id="@+id/tvScale"
+                    android:layout_width="76dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:maxLines="1"
+                    android:textColor="@color/smu_gray_dark"
+                    android:textSize="12sp"
+                    tools:text="Desde 12 un" />
+
+                <TextView
+                    android:id="@+id/tvScalePrice"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="40dp"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textColor="@color/alvi_blue"
+                    android:textSize="12sp"
+                    tools:text="$830 c/u" />
+
+                <TextView
+                    android:id="@+id/tvCucarda"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="3dp"
+                    android:maxLines="1"
+                    android:background="@drawable/ic_cucarda"
+                    android:fontFamily="@font/open_sans"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/alvi_blue"
+                    android:textSize="11sp"
+                    tools:text="Ahorra 45%" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="2dp">
+
+                <TextView
+                    android:id="@+id/tvScale2"
+                    android:layout_width="76dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:ellipsize="end"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:maxLines="1"
+                    android:textColor="@color/smu_gray_dark"
+                    android:textSize="12sp"
+                    tools:text="Desde 6 un" />
+
+                <TextView
+                    android:id="@+id/tvScalePrice2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="40dp"
+                    android:fontFamily="@font/open_sans_semibold"
+                    android:textColor="@color/alvi_blue"
+                    android:textSize="12sp"
+                    tools:text="$900 c/u" />
+
+
+                <TextView
+                    android:id="@+id/tvCucarda2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="3dp"
+                    android:maxLines="1"
+                    android:background="@drawable/ic_cucarda"
+                    android:fontFamily="@font/open_sans"
+                    android:gravity="center_vertical"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="4dp"
+                    android:textColor="@color/alvi_blue"
+                    android:textSize="11sp"
+                    tools:text="Ahorra 40%" />
+            </LinearLayout>
+        </LinearLayout>
+        <View
+            android:id="@+id/view1"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="100dp"
+            android:background="@color/smu_gray_light"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvPriceRegular"
+            app:layout_constraintTop_toBottomOf="@+id/llScalePrice" />
+
+        <TextView
+            android:id="@+id/tvPriceRegular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/open_sans"
+            android:text="Precio regular"
+            android:textColor="@color/colorTextNegro"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="@id/tvTitleProduct"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <TextView
+            android:id="@+id/tvPriceProduct"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="55dp"
+            android:fontFamily="@font/open_sans"
+            android:text="$1.500 c/u"
+            android:textColor="@color/colorTextNegro"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvPriceRegular"
+            app:layout_constraintStart_toEndOf="@+id/tvPriceRegular"
+            app:layout_constraintTop_toTopOf="@+id/tvPriceRegular" />
+
+        <Button
+            android:id="@+id/btnAddProduct"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="12dp"
+            android:background="@drawable/button_border_blue"
+            android:fontFamily="@font/open_sans_semibold"
+            android:gravity="center"
+            android:text="Agregar producto"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvTitleProduct"
+            app:layout_constraintTop_toBottomOf="@+id/tvPriceProduct" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
