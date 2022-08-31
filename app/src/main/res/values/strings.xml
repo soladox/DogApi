@@ -12,4 +12,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="imagenes_del_perro">Imagenes del perro</string>
+    <string name="mermelada">Mermelada Original de Mora</string>
+    <string name="watt_s">Watt\'s</string>
+    <string name="test">Test</string>
+    <string name="empaque">250 gr - Empaque 10 Unidades</string>
+    <string name="fab_favorite">fab favorite</string>
+    <string name="fab_task">fab_task</string>
+    <string name="precio_socio">Precio Socio</string>
+    <string name="logo_alvi">logo alvi</string>
+    <string name="precio_regular">Precio regular</string>
+    <string name="_1_500_c_u">$1.500 c/u</string>
+    <string name="agregar_producto">Agregar producto</string>
 </resources>
